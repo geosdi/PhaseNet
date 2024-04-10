@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow
+FROM tensorflow/tensorflow:2.13.0-gpu
 
 # Create the environment:
 # COPY env.yml /app
