@@ -5,7 +5,7 @@
 ## 1.  Use Dockerhub build  
 - Download PhaseNet repository
 ```bash
-docker run -d --gpus all --runtime=nvidia -p 8000:8000 -v /home/standard/stabile/PhaseNet-API-Docker/test_data:/opt/test_data cnrgeosdi/phasenet-api-v1.0
+docker run -d --gpus all --runtime=nvidia -p 8000:8000 -v ./test_data:/opt/test_data cnrgeosdi/phasenet-api-v1.0
 ```
 
 ## 2. Pre-trained model
