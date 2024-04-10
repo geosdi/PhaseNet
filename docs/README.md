@@ -1,4 +1,4 @@
-# PhaseNet: A Deep-Neural-Network-Based Seismic Arrival Time Picking Method GPU Version
+# PhaseNet: A Deep-Neural-Network-Based Seismic Arrival Time Picking Method GPU Version testing on NVIDIA DGX A100 80Gb
 
 [![](https://github.com/AI4EPS/PhaseNet/workflows/documentation/badge.svg)](https://ai4eps.github.io/PhaseNet)
 
