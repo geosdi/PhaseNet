@@ -1,4 +1,4 @@
-# PhaseNet: A Deep-Neural-Network-Based Seismic Arrival Time Picking Method
+# PhaseNet: A Deep-Neural-Network-Based Seismic Arrival Time Picking Method GPU Version
 
 [![](https://github.com/AI4EPS/PhaseNet/workflows/documentation/badge.svg)](https://ai4eps.github.io/PhaseNet)
 
