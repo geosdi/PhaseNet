@@ -2,20 +2,10 @@
 
 [![](https://github.com/AI4EPS/PhaseNet/workflows/documentation/badge.svg)](https://ai4eps.github.io/PhaseNet)
 
-## 1.  Install [miniconda](https://docs.conda.io/en/latest/miniconda.html) and requirements
+## 1.  Use Dockerhub build  
 - Download PhaseNet repository
 ```bash
-git clone https://github.com/wayneweiqiang/PhaseNet.git
-cd PhaseNet
-```
-- Install to default environment
-```bash
-conda env update -f=env.yml -n base
-```
-- Install to "phasenet" virtual envirionment
-```bash
-conda env create -f env.yml
-conda activate phasenet
+docker run -d --gpus all --runtime=nvidia -p 8000:8000 -v /home/standard/stabile/PhaseNet-API-Docker/test_data:/opt/test_data cnrgeosdi/phasenet-api-v1.0
 ```
 
 ## 2. Pre-trained model
@@ -29,14 +19,8 @@ Located in directory: **model/190703-214543**
 - Tan, Yen Joe, et al. "Machine‐Learning‐Based High‐Resolution Earthquake Catalog Reveals How Complex Fault Structures Were Activated during the 2016–2017 Central Italy Sequence." The Seismic Record 1.1 (2021): 11-19.
 
 ## 4. Batch prediction
-See examples in the [notebook](https://github.com/wayneweiqiang/PhaseNet/blob/master/docs/example_batch_prediction.ipynb): [example_batch_prediction.ipynb](example_batch_prediction.ipynb)
 
-
-PhaseNet currently supports four data formats: mseed, sac, hdf5, and numpy. The test data can be downloaded here:
-```
-wget https://github.com/wayneweiqiang/PhaseNet/releases/download/test_data/test_data.zip
-unzip test_data.zip
-```
+docker exec -it <container_name> bash
 
 - For mseed format:
 ```
@@ -123,22 +107,5 @@ optional arguments:
 Notes:
 1. The *phase_index* means which data point is the pick in the original sequence. So *phase_time* = *begin_time* + *phase_index* / *sampling rate*. The default *sampling_rate* is 100Hz 
 
-
-## 5. QuakeFlow example
-A complete earthquake detection workflow can be found in the [QuakeFlow](https://wayneweiqiang.github.io/QuakeFlow/) project.
-
-## 6. Interactive example
-See details in the [notebook](https://github.com/wayneweiqiang/PhaseNet/blob/master/docs/example_gradio.ipynb): [example_interactive.ipynb](example_gradio.ipynb)
-
-## 7. Training
-- Download a small sample dataset:
-```bash
-wget https://github.com/wayneweiqiang/PhaseNet/releases/download/test_data/test_data.zip
-unzip test_data.zip
-```
-- Start training from the pre-trained model
-```
-python phasenet/train.py  --model_dir=model/190703-214543/ --train_dir=test_data/npz --train_list=test_data/npz.csv  --plot_figure --epochs=10 --batch_size=10
-```
 - Check results in the **log** folder
 
